@@ -1,9 +1,9 @@
 import React from 'react';
 import List from './List';
 
-function FormValuesDisplay({ formValues }) {
+function FormValuesDisplay() {
   return (
-    <List {...formValues} />
+    <div>FormValuesDisplay</div>
   )
 }
 

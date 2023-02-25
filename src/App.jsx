@@ -6,21 +6,19 @@ import NotFound from './pages/NotFound';
 import Layout from './components/Layout';
 
 function App() {
-
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route path='contact' element={<Contact />} />
-            <Route path='param/:title' element={<Contact />} />
-            <Route path='clocks' element={<Clocks />} />
-            <Route path='*' element={<NotFound />} />
+          <Route path="/" element={<Layout />}>
+            <Route path="contact" element={<Contact />} />
+            <Route path="clocks" element={<Clocks />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Router>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
