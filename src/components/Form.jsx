@@ -1,5 +1,5 @@
-import React, { Children, useEffect } from 'react';
-import { get, useForm } from 'react-hook-form';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
@@ -44,8 +44,7 @@ function Form({ updateFormValues }) {
   return (
     <form onSubmit={handleSubmit(submitHandler)}>
       <label>
-        Username:{' '}
-        <input type="text" {...register(`username`, { required: true })} />
+        Username: <input type="text" {...register(`username`, { required: true })} />
       </label>
       {errors.username && <span>{errors.username.message}</span>}
       <label>
