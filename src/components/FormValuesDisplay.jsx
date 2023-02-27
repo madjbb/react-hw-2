@@ -1,9 +1,18 @@
 import React from 'react';
-import List from './List';
+import { nanoid } from 'nanoid';
 
-function FormValuesDisplay() {
+function FormValuesDisplay({ formValues }) {
+  // console.log(`formValues`, formValues);
+
+  if (formValues === -1) {
+    return null;
+  }
+
   return (
-    <div>FormValuesDisplay</div>
+    <div>
+      {/* {Object.entries(formValues).map((value) => (<p key={nanoid()}>{value[0]}: {value[1]}</p>))} */}
+      {Object.entries(formValues).map(([key, value]) => (<p key={nanoid()}>{key}: {value}</p>))}
+    </div>
   )
 }
 

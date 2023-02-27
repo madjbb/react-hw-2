@@ -7,9 +7,13 @@ const schema = yup.object({
   username: yup
     .string()
     .required('required field')
-    .min(2, 'must be between 2-20 characters long')
-    .max(20, 'must be between 2-20 characters long'),
-  email: yup.string().required('required field').email('must be an email'),
+    .min(2, 'must be between 2-20 characters')
+    .max(20, 'must be between 2-20 characters'),
+  email: yup
+    .string()
+    .required('required field')
+    .email('must be an email')
+    .max(20, 'must be less than 50 characters'),
   age: yup
     .number()
     .required('required field')
@@ -22,7 +26,6 @@ function Form({ updateFormValues }) {
     register,
     reset,
     handleSubmit,
-    getValues,
     formState: { errors, isDirty, isValid, isSubmitting },
     formState,
   } = useForm({
