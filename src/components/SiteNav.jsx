@@ -7,6 +7,7 @@ function SiteNav() {
       {/* <NavLink to={`/`}>Home</NavLink> */}
       <NavLink to={`/contact`}>Contact</NavLink>
       <NavLink to={`/clocks`}>Clocks</NavLink>
+      <NavLink to={`/cars`}>Cars</NavLink>
     </nav>
   )
 }
