@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Clock from '../components/Clock';
 import LocaleDropdown from '../components/LocaleDropdown';
 
@@ -17,6 +17,20 @@ function Clocks() {
   console.log(`locale`, locale);
   
   const formatter = Intl.DateTimeFormat(locale, options);
+
+  let timerId = null;
+
+  const secondTicker = useCallback(() => {
+    timerId = setInterval(() => {
+      // const newSecondNumber = date.getSeconds + 1;
+      // const newDate = date.setSeconds(newSecondNumber);
+      setDate(new Date());
+    }, 1000);
+  },[date, setDate]);
+
+  useEffect(() => {
+    secondTicker();
+  }, []);
 
   return (
     <>
